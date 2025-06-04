@@ -67,7 +67,7 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve
 
-terraform_destroy:
+  terraform_destroy:
     name: "terraform_destroy"
     runs-on: ubuntu-latest
     env:
