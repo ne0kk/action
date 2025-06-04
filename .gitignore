@@ -11,6 +11,7 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
+*.tfvars
 
 # Crash log files
 crash.log
@@ -79,3 +80,5 @@ Thumbs.db
 
 # SSH Keys
 *.pem
+
+secret.*
