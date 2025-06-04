@@ -3,7 +3,7 @@ terraform {
     endpoints = {
       s3 =       "https://storage.yandexcloud.net"
       dynamodb = "https://docapi.serverless.yandexcloud.net/ru-central1/b1gv3i9qq3bt8g400fs4/etnt60bthq02k7tlpb8e"
-    }
+    } 
     region                      = "ru-central1"
     key                         = "terraform-remote-state"
     skip_region_validation      = true
