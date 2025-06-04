@@ -1,28 +1,13 @@
-#cloud vars
-variable "token" {
-  type        = string
-  default     = "y0_AgAAAAAz0Q6dAATuwQAAAAEVRIlUAAA-Fna2jTtODYawc0MREkFhUoaPSg"
-  description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
-}
-
-
-variable "cloud_id" {
-  type        = string
-  default     = "b1gv3i9qq3bt8g400fs4"
-  description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
-}
-
-variable "folder_id" {
-  type        = string
-  default     = "b1g4oj1qbocerk58ophh"
-  description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
-
-}
-
 variable "default_zone" {
   type        = string
   default     = "ru-central1-a"
   description = "https://cloud.yandex.ru/docs/overview/concepts/geo-scope"
+}
+
+variable "bucket_name" {
+  type        = string
+  default     = "bucket-diplom"
+  description = "bucket_name"
 }
 
 variable "account_name" {
