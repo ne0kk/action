@@ -64,4 +64,4 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve -var="folder_id=${{ secrets.folder_id }}" -var="cloud_id=${{ secrets.cloud_id }}" -var="token=${{ secrets.token }}"
+        run: terraform apply -auto-approve -var=${{ secrets.folder_id }} -var=${{ secrets.cloud_id }} -var=${{ secrets.token }}
