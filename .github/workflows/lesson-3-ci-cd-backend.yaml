@@ -12,6 +12,7 @@ on:
     paths:
       - 'aws/backend/**'
 
+
 jobs:
   terraform:
     name: "Terraform"
