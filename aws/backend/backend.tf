@@ -6,4 +6,5 @@ resource "yandex_storage_object" "backend" {
   key    = "terraform.tfstate"
   source = "./terraform.tfstate"
   depends_on = [yandex_storage_bucket.state_storage]
+  
   }
