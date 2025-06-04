@@ -56,6 +56,7 @@ resource "yandex_vpc_security_group" "k8s-public-services" {
     v4_cidr_blocks = ["0.0.0.0/0"]
     from_port      = 30000
     to_port        = 32767
+    
   }
 }
 
