@@ -7,9 +7,6 @@ on:
       resource:
         type: choice
         description: Choose the resource
-        options:
-        - name_of_dir1
-        - name_of_dir2
       # Terraform action you want to perform
       action:
         description: 'Terraform Action to Perform'
@@ -20,7 +17,7 @@ on:
 
 
 jobs:
-  terraform apply:
+  terraform_apply:
     name: "Terraform"
     runs-on: ubuntu-latest
     env:
@@ -70,7 +67,7 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve
 
-terraform apply:
+terraform_destroy:
     name: "Terraform"
     runs-on: ubuntu-latest
     env:
