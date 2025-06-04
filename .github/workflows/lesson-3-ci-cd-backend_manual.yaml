@@ -18,7 +18,7 @@ on:
 
 jobs:
   terraform_apply:
-    name: "Terraform"
+    name: "terraform_apply"
     runs-on: ubuntu-latest
     env:
       working-directory: aws/backend
@@ -68,7 +68,7 @@ jobs:
         run: terraform apply -auto-approve
 
 terraform_destroy:
-    name: "Terraform"
+    name: "terraform_destroy"
     runs-on: ubuntu-latest
     env:
       working-directory: aws/backend
