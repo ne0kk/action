@@ -22,6 +22,7 @@ jobs:
       aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
       aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       aws-region: ${{ secrets.AWS_REGION }}
+      
     defaults:
       run:
         working-directory: ${{ env.working-directory }}
@@ -42,7 +43,8 @@ jobs:
 
       - name: Terraform Init
         id: init
-        run: terraform init
+        run: terraform init -backend-config=bucket=${{ secrets.BUCKET }} -backend-config=key=${{ secrets.key }} -backend-config=access_key=${{ secrets.access_key }} -backend-config=secret_key=${{ secrets.secret_key }} -backend-config=dynamodb_table=${{ secrets.dynamodb_table }} 
+
       
       - name: Terraform Validate
         id: validate
@@ -62,4 +64,4 @@ jobs:
 
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -var="folder_id=${{ secrets.folder_id }}" -var="cloud_id=${{ secrets.cloud_id }}" -var="token=${{ secrets.token }}"
