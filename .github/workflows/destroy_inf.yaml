@@ -23,11 +23,7 @@ jobs:
           with:
               terraform_version: 1.9.8
               
-        - name: Show Destroy plan
-          run: terraform plan -destroy
-          continue-on-error: true
-
         - name: Destroy resources jobs
           id: destroy
-          run: terraform destroy -auto-approve
+          run: terraform destroy -auto-approve -var=${{ secrets.folder_id }} -var=${{ secrets.cloud_id }} -var=${{ secrets.token }} -lock=false
 
