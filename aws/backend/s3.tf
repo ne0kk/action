@@ -6,6 +6,6 @@ resource "yandex_storage_bucket" "state_storage" {
 
   anonymous_access_flags {
     read = false
-    list = false 
+    list = false
   }
 }

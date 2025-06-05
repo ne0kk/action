@@ -53,7 +53,7 @@ jobs:
       - name: Terraform Plan
         id: plan
         if: github.event_name == 'pull_request'
-        run: terraform plan -no-color -lock=false
+        run: terraform plan -no-color -var=${{ secrets.folder_id }} -var=${{ secrets.cloud_id }} -var=${{ secrets.token }} -lock=false
         continue-on-error: true
 
       
