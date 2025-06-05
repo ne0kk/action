@@ -23,7 +23,7 @@ resource "yandex_iam_service_account_static_access_key" "terraform_service_accou
 resource "yandex_iam_service_account" "kuber" {
   name      = var.kuber
   description = "service account to manage VMs"
-  folder_id = var.folder_id
+  folder_id = var.folder_id 
 }
 
 # Назначение роли editor сервисному аккаунту
